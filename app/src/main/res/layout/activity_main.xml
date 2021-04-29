@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".ui.MainActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="服务器地址" />
+
+        <EditText
+            android:id="@+id/et_host"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="请输入服务器地址"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:text="10.10.6.24"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="端口号" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_port"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="请输入端口号"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:singleLine="true"
+                android:text="1883"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/btn_connect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="连接服务器(并订阅主题)" />
+
+            <Button
+                android:id="@+id/btn_disconnect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="断开连接" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="客户端点数" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_client_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="请输入客户端点数"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:singleLine="true"
+                android:text="20"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/btn_confirm_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="确认修改" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="客户端id"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/et_client_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="请输入客户端id"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_regen_client_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="重新生成"
+                android:visibility="gone" />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="要订阅的主题(多个主题使用&quot;,&quot;分开)"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/et_subscribe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="请输入要订阅的主题"
+                android:text="class_topic"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/btn_subscribe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="订阅" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="要发布的主题"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/et_publish_topic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="请输入要发布的主题"
+            android:singleLine="true"
+            android:text="whiteboard_gettopic"
+            android:textColor="@android:color/black"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="要发布的消息" />
+
+        <EditText
+            android:id="@+id/et_publish_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="请输入要发布的消息"
+            android:text="hello"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="多次发送消息次数" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_publish_repeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="请输入要发布的次数"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="9"
+                android:singleLine="true"
+                android:text="10000"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/btn_publish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发布消息" />
+
+            <Button
+                android:id="@+id/btn_cancel_publish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="停止发布消息"
+                android:textColor="@android:color/holo_red_dark" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/rg_ping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <RadioButton
+                android:id="@+id/rb_not_ping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="不PING"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/rb_ping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PING" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <View
+        android:layout_width="2px"
+        android:layout_height="match_parent"
+        android:layout_margin="10px"
+        android:background="@android:color/black" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="wifi信号强度(绝对值越小, 信号越强)"
+            android:textColor="@android:color/holo_red_dark" />
+
+        <TextView
+            android:id="@+id/tv_wifi_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_dark" />
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="清空" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_show"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</LinearLayout>
