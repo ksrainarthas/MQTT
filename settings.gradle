@@ -1,0 +1,3 @@
+include ':app'
+include ':Mqtt'
+rootProject.name = "MQTT"
